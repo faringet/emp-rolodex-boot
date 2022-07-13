@@ -1,0 +1,13 @@
+package org.mikhaildavydov.spring.springboot.spring_springboot;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class EmpRolodexBootApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
