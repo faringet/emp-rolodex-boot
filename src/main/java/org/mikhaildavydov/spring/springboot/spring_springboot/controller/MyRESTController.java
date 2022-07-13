@@ -2,6 +2,7 @@ package org.mikhaildavydov.spring.springboot.spring_springboot.controller;
 
 
 
+
 import org.mikhaildavydov.spring.springboot.spring_springboot.entity.Employee;
 import org.mikhaildavydov.spring.springboot.spring_springboot.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,11 +49,14 @@ public class MyRESTController {
     public String deleteEmployee(@PathVariable int id) {
         Employee employee = employeeService.getEmploy(id);
 
-
-
         employeeService.deleteEmployee(id);
         return "Employee with ID = " + id + " was deleted";
     }
 
+    @GetMapping("/employees/name/{name}")
+    public List<Employee> showAllEmployeesByName(@PathVariable String name){
+        List<Employee> employees = employeeService.findAllByName(name);
+        return employees;
+    }
 
 }
